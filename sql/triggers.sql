@@ -2,7 +2,7 @@
 GO
 
 
-/*Trigger 3 Cập nhật điểm của khách hàng khi xuất bill*/
+/*Cập nhật điểm của khách hàng khi xuất bill*/
 
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_Customer_UpdateRewardPoint_onBillInsert' AND [type] = 'TR')
 	DROP TRIGGER [dbo].tr_Customer_UpdateRewardPoint_onBillInsert;
@@ -28,7 +28,7 @@ BEGIN
 END;
 
 GO
-/*Trigger 4 Cập nhật điểm của khách khi họ sử dụng điểm để thanh toán */
+/*Cập nhật điểm của khách khi họ sử dụng điểm để thanh toán */
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_Customer_UpdateRewardPoint_onBillUpdate' AND [type] = 'TR')
 	DROP TRIGGER [dbo].tr_Customer_UpdateRewardPoint_onBillUpdate;
 GO
@@ -51,7 +51,7 @@ BEGIN
                       END
     WHERE customerId = @customerId;
 END;
-/*Trigger 5 Tự tạo tài khoản cho nhân viên khi thêm một nhân viên */
+/*Tự tạo tài khoản cho nhân viên khi thêm một nhân viên */
 --DROP TRIGGER tr_Employee_AfterInsert
 --GO
 GO
@@ -77,7 +77,7 @@ BEGIN
 END
 
 GO
-/*Trigger 6 Khóa/Mở tài khoản của nhân viên khi cập nhật trạng thái đang làm việc của nhân viên đấy */
+/*Khóa/Mở tài khoản của nhân viên khi cập nhật trạng thái đang làm việc của nhân viên đấy */
 --DROP TRIGGER tr_Employee_AfterUpdateIsWorking
 --GO
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_Employee_AfterUpdateIsWorking' AND [type] = 'TR')
@@ -110,7 +110,7 @@ BEGIN
 END;
 
 GO
-/* Trigger 7 Cập nhật số tiền tổng của OrderBill khi thêm một sản phẩm trong OrderBillDetails */
+/*Cập nhật số tiền tổng của OrderBill khi thêm một sản phẩm trong OrderBillDetails */
 
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_OrderBill_AfterInsert' AND [type] = 'TR')
 	DROP TRIGGER [dbo].[tr_OrderBill_AfterInsert];
@@ -135,19 +135,7 @@ BEGIN
 	WHERE billId = @billId
 END;
 
-/* Trigger 8 Cập nhật số tiền tổng của OrderBill khi sửa một sản phẩm trong OrderBillDetails */
-
-/* Trigger 9 Cập nhật số tiền tổng của OrderBill khi xóa một sản phẩm trong OrderBillDetails */
-
-/*Trigger cập nhật số điểm thưởng của khách hàng khi thêm một Order Bill - trường hợp trừ điểm thưởng vì đã sử dụng khấu phần hóa đơn*/
-
-/*Trigger cập nhật số điểm thưởng của khách hàng khi thêm một Order Bill - trường hợp cộng điểm thưởng cho hóa đơn*/
-
-/*Trigger cập nhật số điểm thưởng của khách hàng khi cập nhật finalBill của một Order Bill*/
-
-/*Trigger cập nhật số điểm thưởng của khách hàng khi xóa một Order Bill*/
-
-/* Trigger Cập nhật số tiền tổng của RestockBill khi thêm một sản phẩm trong RestockBillDetails */
+/*Cập nhật số tiền tổng của RestockBill khi thêm một sản phẩm trong RestockBillDetails */
 GO
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_RestockBill_AfterInsert' AND [type] = 'TR')
 	DROP TRIGGER [dbo].tr_RestockBill_AfterInsert;
@@ -168,7 +156,7 @@ BEGIN
 END;
 GO
 
-/* Trigger Cập nhật số tiền tổng của RestockBill khi sửa một sản phẩm trong RestockBillDetails */
+/*Cập nhật số tiền tổng của RestockBill khi sửa một sản phẩm trong RestockBillDetails */
 GO
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_RestockBill_AfterUpdate' AND [type] = 'TR')
 	DROP TRIGGER [dbo].tr_RestockBill_AfterUpdate;
@@ -196,7 +184,7 @@ BEGIN
 END;
 GO
 
-/* Trigger Cập nhật số tiền tổng của RestockBill khi xóa một sản phẩm trong RestockBillDetails */
+/*Cập nhật số tiền tổng của RestockBill khi xóa một sản phẩm trong RestockBillDetails */
 GO
 IF EXISTS (SELECT * FROM sys.objects WHERE [name] = N'tr_RestockBill_AfterDelete' AND [type] = 'TR')
 	DROP TRIGGER [dbo].tr_RestockBill_AfterDelete;
