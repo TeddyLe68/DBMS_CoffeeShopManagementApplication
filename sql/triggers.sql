@@ -242,7 +242,7 @@ BEGIN
     FROM inserted;
 
     -- Tạo một Login mới trên SQL Server với username và password từ bảng Account
-    EXEC('CREATE LOGIN [' + @UserName + '] WITH PASSWORD = ''' + @Password + ''', DEFAULT_DATABASE=[CoffeeShop], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF');
+    EXEC('CREATE LOGIN [' + @UserName + '] WITH PASSWORD = ''' + @Password + ''', DEFAULT_DATABASE=[CoffeeShopManagement], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF');
     
     -- Tạo một User mới trong database CoffeeShop liên kết với Login vừa tạo
     EXEC('CREATE USER [' + @UserName + '] FOR LOGIN [' + @UserName + ']');

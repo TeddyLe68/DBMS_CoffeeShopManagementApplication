@@ -22,8 +22,8 @@ CREATE TABLE Employee (
     updatedAt DATETIME,
     isDeleted BIT DEFAULT 0,
 );
-
 GO
+
 CREATE TABLE Product (
     productId UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     productName NVARCHAR(100),
@@ -73,10 +73,9 @@ CREATE TABLE Account (
     updatedAt DATETIME,
     isDeleted BIT DEFAULT 0
 );
-
-
-
 GO
+
+
 CREATE TABLE OrderBill (
     billId UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
 	rewardPointsUsed DECIMAL(10, 2) CHECK (rewardPointsUsed >= 0.00),
@@ -87,8 +86,9 @@ CREATE TABLE OrderBill (
     employeeId UNIQUEIDENTIFIER REFERENCES Employee(employeeId),
     customerId UNIQUEIDENTIFIER REFERENCES Customer(customerId)
 );
-
 GO
+
+
 CREATE TABLE RestockBill (
     restockBillId UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     date DATE,
@@ -97,30 +97,35 @@ CREATE TABLE RestockBill (
 );
 
 GO
+
+
 CREATE TABLE OrderBillDetails (
     billId UNIQUEIDENTIFIER REFERENCES OrderBill(billId),
     productId UNIQUEIDENTIFIER REFERENCES Product(productId),
     quantity INT CHECK (quantity >= 1),
     PRIMARY KEY (billId, productId)
 );
-
 GO
+
+
 CREATE TABLE InventoryCheck (
 	checkId UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     employeeId UNIQUEIDENTIFIER REFERENCES Employee(employeeId),
     inventoryId UNIQUEIDENTIFIER REFERENCES Inventory(inventoryId),
     checkDate DATE,
 );
-
 GO
+
+
 CREATE TABLE InventoryCheckDetails (
 	checkId UNIQUEIDENTIFIER REFERENCES InventoryCheck(checkId),
 	ingredientId UNIQUEIDENTIFIER REFERENCES Ingredient(ingredientId),
     quantity INT,
     PRIMARY KEY (checkId, ingredientId)
 );
-
 GO
+
+
 CREATE TABLE RestockBillDetails (
     ingredientId UNIQUEIDENTIFIER REFERENCES Ingredient(ingredientId),
 	restockBillId UNIQUEIDENTIFIER REFERENCES RestockBill(restockBillId),

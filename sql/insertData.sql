@@ -1,6 +1,17 @@
 ﻿use CoffeeShopManagement
-
 GO
+
+
+-- Tạo tài khoản (Account) cho admin và employee
+INSERT INTO Account (employeeId, username, password, role, createdAt, updatedAt)
+VALUES 
+    ('DE5F28A1-143A-44F0-B178-8D57301B3481', 'admin', 'admin123', 'manager', GETDATE(), GETDATE());
+
+
+GRANT UPDATE ON Account TO [Admin User]
+GO
+SELECT HAS_PERMS_BY_NAME(DB_NAME(), 'DATABASE', 'UPDATE');
+
 INSERT INTO Employee (fullName, phoneNumber, address, email, isWorking, joinedAt, updatedAt)
 VALUES
 	(N'Tất Thắng', '0933344455', N'2 Võ Văn Ngân, TP.HCM', 'thang@gmail.com', 1, CONVERT(DATE, '11/02/2024', 103), GETDATE());
@@ -16,7 +27,6 @@ GO
 INSERT INTO Employee (fullName, phoneNumber, address, email, isWorking, joinedAt, updatedAt)
 VALUES
 	(N'Minh Đức', '0933355577', N'4 Võ Văn Ngân, TP.HCM', 'duc@gmail.com', 0, CONVERT(DATE, '12/09/2023', 103), GETDATE());
-
 GO
 INSERT INTO Customer (customerName, phoneNumber, createdAt, updatedAt)
 VALUES 
@@ -41,10 +51,9 @@ VALUES
     (N'Sinh tố Bơ', N'Lớn', 40.000, GETDATE(), GETDATE()),
 	(N'Sinh tố Dâu', N'Vừa', 35.000, GETDATE(), GETDATE()),
     (N'Sinh tố Dâu', N'Lớn', 40.000, GETDATE(), GETDATE());
--- Chạy từng câu và sửa employeeeId, customerId, billId lại
-
-
 GO
+
+-- Chạy từng câu và sửa employeeeId, customerId, billId lại
 INSERT INTO OrderBill (rewardPointsUsed, createdAt, employeeId, customerId)
 VALUES (25.000 , GETDATE(), 'CE8198DA-05EC-46A9-A3F8-E5E64ECE8864', '1E155C77-BD6E-4B65-B030-0ACE23F14887'),
 		(0, GETDATE(), 'CE8198DA-05EC-46A9-A3F8-E5E64ECE8864', '1E155C77-BD6E-4B65-B030-0ACE23F14887'),
