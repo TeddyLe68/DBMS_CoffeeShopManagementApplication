@@ -30,8 +30,6 @@ namespace CoffeeShopApplication.DB
             Password = null;
         }
 
-
-        // private constructor to prevent instantiation of the class
         private DBConnection()
         {
             string connectionString = $"Server={serverName};Database=CoffeeShopManagement;Integrated Security=True;";

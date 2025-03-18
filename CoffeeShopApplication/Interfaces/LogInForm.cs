@@ -45,9 +45,8 @@ namespace CoffeeShopApplication.Interfaces
                 Program.loggedInEmployeeId = accountId;
                 DBConnection.Username = tbUserName.Text;
                 DBConnection.Password = tbPassword.Text;
-                MessageBox.Show("Login successfully!", "Log In Success");
-                //HomeForm homeForm = new HomeForm();
-                //homeForm.Show();
+                HomeForm homeForm = new HomeForm();
+                homeForm.Show();
                 tbUserName.Clear();
                 tbPassword.Clear();
                 tbUserName.Focus();

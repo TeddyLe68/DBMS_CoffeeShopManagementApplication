@@ -54,16 +54,79 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ShopCustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopCustomersForm.Designer.cs">
+      <DependentUpon>ShopCustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopEmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopEmployeesForm.Designer.cs">
+      <DependentUpon>ShopEmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopIngredientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopIngredientsForm.Designer.cs">
+      <DependentUpon>ShopIngredientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryCheckForm.Designer.cs">
+      <DependentUpon>ShopInventoryCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryForm.Designer.cs">
+      <DependentUpon>ShopInventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopOrderBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopOrderBillForm.Designer.cs">
+      <DependentUpon>ShopOrderBillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopProductsForm.Designer.cs">
+      <DependentUpon>ShopProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopRestockBillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopRestockBillsForm.Designer.cs">
+      <DependentUpon>ShopRestockBillsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\Navigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Navigator.Designer.cs">
+      <DependentUpon>Navigator.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
@@ -77,6 +140,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC\Navigator.resx">
+      <DependentUpon>Navigator.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,8 +166,6 @@
     <Content Include="Resources\search.png" />
     <Content Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UC\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
