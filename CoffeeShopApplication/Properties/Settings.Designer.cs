@@ -26,5 +26,7 @@ namespace CoffeeShopApplication.Properties
                 return defaultInstance;
             }
         }
+
+        public string DatabaseConnectionString { get; internal set; }
     }
 }

@@ -13,7 +13,7 @@ namespace CoffeeShopApplication
 {
     public partial class Form1: Form
     {
-        ConnectionDB db = ConnectionDB.getInstance();
+        DBConnection db = DBConnection.getInstance();
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +31,11 @@ namespace CoffeeShopApplication
             {
                 MessageBox.Show("Kết nối thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
