@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CoffeeShopApplication.Interfaces
+namespace CoffeeShopApplication.UC
 {
-    public partial class ShopInventoryForm: Form
+    public partial class ShopInventoryCheckControl: UserControl
     {
-        public ShopInventoryForm()
+        public ShopInventoryCheckControl()
         {
             InitializeComponent();
         }

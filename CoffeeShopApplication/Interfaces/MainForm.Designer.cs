@@ -1,6 +1,6 @@
 ﻿namespace CoffeeShopApplication.Interfaces
 {
-    partial class HomeForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
-            this.navigator1 = new CoffeeShopApplication.UC.Navigator();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,24 +38,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.pbAccounts = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAccounts)).BeginInit();
+            this.pnlMainContent = new System.Windows.Forms.Panel();
+            this.navigator1 = new CoffeeShopApplication.UC.Navigator();
             this.SuspendLayout();
-            // 
-            // navigator1
-            // 
-            this.navigator1.BackColor = System.Drawing.Color.NavajoWhite;
-            this.navigator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigator1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.navigator1.Location = new System.Drawing.Point(0, 0);
-            this.navigator1.Name = "navigator1";
-            this.navigator1.Size = new System.Drawing.Size(1262, 155);
-            this.navigator1.TabIndex = 0;
             // 
             // label1
             // 
@@ -166,73 +150,30 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Inventory";
             // 
-            // pictureBox1
+            // pnlMainContent
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(502, 171);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainContent.Location = new System.Drawing.Point(0, 155);
+            this.pnlMainContent.Name = "pnlMainContent";
+            this.pnlMainContent.Size = new System.Drawing.Size(1262, 518);
+            this.pnlMainContent.TabIndex = 10;
             // 
-            // label10
+            // navigator1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Ink Free", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Chocolate;
-            this.label10.Location = new System.Drawing.Point(145, 479);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(983, 58);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Wellcome To Coffee Shop Management System";
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.NavajoWhite;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(565, 580);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(125, 36);
-            this.btnLogOut.TabIndex = 12;
-            this.btnLogOut.Text = "LOG OUT";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // pbAccounts
-            // 
-            this.pbAccounts.Image = ((System.Drawing.Image)(resources.GetObject("pbAccounts.Image")));
-            this.pbAccounts.Location = new System.Drawing.Point(34, 180);
-            this.pbAccounts.Name = "pbAccounts";
-            this.pbAccounts.Size = new System.Drawing.Size(50, 50);
-            this.pbAccounts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAccounts.TabIndex = 13;
-            this.pbAccounts.TabStop = false;
-            this.pbAccounts.Click += new System.EventHandler(this.pbAccounts_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Chocolate;
-            this.label11.Location = new System.Drawing.Point(90, 206);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 24);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Hello !";
+            this.navigator1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.navigator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigator1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.navigator1.Location = new System.Drawing.Point(0, 0);
+            this.navigator1.Name = "navigator1";
+            this.navigator1.Size = new System.Drawing.Size(1262, 155);
+            this.navigator1.TabIndex = 0;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.pbAccounts);
-            this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pnlMainContent);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -244,11 +185,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.navigator1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HomeForm";
-            this.Text = "HomeForm";
+            this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.HomeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAccounts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,10 +206,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.PictureBox pbAccounts;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel pnlMainContent;
     }
 }
