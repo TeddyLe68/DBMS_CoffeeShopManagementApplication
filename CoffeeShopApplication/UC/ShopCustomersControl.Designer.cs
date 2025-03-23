@@ -47,19 +47,21 @@
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.pnlCustomerInfo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            this.pnlCustomerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 180);
+            this.label1.Location = new System.Drawing.Point(10, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 23);
             this.label1.TabIndex = 0;
@@ -69,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 250);
+            this.label2.Location = new System.Drawing.Point(10, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 23);
             this.label2.TabIndex = 1;
@@ -79,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 325);
+            this.label3.Location = new System.Drawing.Point(10, 293);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 23);
             this.label3.TabIndex = 2;
@@ -89,7 +91,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 110);
+            this.label4.Location = new System.Drawing.Point(10, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 23);
             this.label4.TabIndex = 3;
@@ -98,49 +100,52 @@
             // tbId
             // 
             this.tbId.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbId.Location = new System.Drawing.Point(185, 102);
+            this.tbId.Location = new System.Drawing.Point(166, 80);
             this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(250, 31);
+            this.tbId.Size = new System.Drawing.Size(210, 31);
             this.tbId.TabIndex = 4;
             // 
             // tbName
             // 
             this.tbName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(185, 172);
+            this.tbName.Location = new System.Drawing.Point(166, 146);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(250, 31);
+            this.tbName.Size = new System.Drawing.Size(210, 31);
             this.tbName.TabIndex = 5;
             // 
             // cbDeleted
             // 
             this.cbDeleted.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDeleted.FormattingEnabled = true;
-            this.cbDeleted.Location = new System.Drawing.Point(185, 317);
+            this.cbDeleted.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cbDeleted.Location = new System.Drawing.Point(166, 285);
             this.cbDeleted.Name = "cbDeleted";
-            this.cbDeleted.Size = new System.Drawing.Size(250, 31);
+            this.cbDeleted.Size = new System.Drawing.Size(210, 31);
             this.cbDeleted.TabIndex = 6;
             // 
             // tbPhoneNumber
             // 
             this.tbPhoneNumber.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhoneNumber.Location = new System.Drawing.Point(185, 242);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(166, 216);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(250, 31);
+            this.tbPhoneNumber.Size = new System.Drawing.Size(210, 31);
             this.tbPhoneNumber.TabIndex = 7;
             // 
             // tbSearch
             // 
             this.tbSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearch.Location = new System.Drawing.Point(185, 32);
+            this.tbSearch.Location = new System.Drawing.Point(166, 16);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(210, 31);
+            this.tbSearch.Size = new System.Drawing.Size(170, 31);
             this.tbSearch.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 40);
+            this.label5.Location = new System.Drawing.Point(10, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 23);
             this.label5.TabIndex = 9;
@@ -150,7 +155,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 409);
+            this.label6.Location = new System.Drawing.Point(25, 409);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 23);
             this.label6.TabIndex = 10;
@@ -158,8 +163,9 @@
             // 
             // pbSearch
             // 
+            this.pbSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSearch.Image = ((System.Drawing.Image)(resources.GetObject("pbSearch.Image")));
-            this.pbSearch.Location = new System.Drawing.Point(405, 33);
+            this.pbSearch.Location = new System.Drawing.Point(346, 17);
             this.pbSearch.Name = "pbSearch";
             this.pbSearch.Size = new System.Drawing.Size(30, 30);
             this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,8 +175,9 @@
             // 
             // pbDelete
             // 
+            this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDelete.Image = ((System.Drawing.Image)(resources.GetObject("pbDelete.Image")));
-            this.pbDelete.Location = new System.Drawing.Point(255, 392);
+            this.pbDelete.Location = new System.Drawing.Point(239, 392);
             this.pbDelete.Name = "pbDelete";
             this.pbDelete.Size = new System.Drawing.Size(40, 40);
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,8 +187,9 @@
             // 
             // pbRefresh
             // 
+            this.pbRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRefresh.Image = ((System.Drawing.Image)(resources.GetObject("pbRefresh.Image")));
-            this.pbRefresh.Location = new System.Drawing.Point(325, 392);
+            this.pbRefresh.Location = new System.Drawing.Point(303, 392);
             this.pbRefresh.Name = "pbRefresh";
             this.pbRefresh.Size = new System.Drawing.Size(40, 40);
             this.pbRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -191,8 +199,9 @@
             // 
             // pbSave
             // 
+            this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
-            this.pbSave.Location = new System.Drawing.Point(395, 392);
+            this.pbSave.Location = new System.Drawing.Point(365, 392);
             this.pbSave.Name = "pbSave";
             this.pbSave.Size = new System.Drawing.Size(40, 40);
             this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -202,8 +211,9 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = ((System.Drawing.Image)(resources.GetObject("pbAdd.Image")));
-            this.pbAdd.Location = new System.Drawing.Point(185, 392);
+            this.pbAdd.Location = new System.Drawing.Point(175, 392);
             this.pbAdd.Name = "pbAdd";
             this.pbAdd.Size = new System.Drawing.Size(40, 40);
             this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,11 +225,11 @@
             // 
             this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomers.Location = new System.Drawing.Point(461, 32);
+            this.dgvCustomers.Location = new System.Drawing.Point(420, 32);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
             this.dgvCustomers.RowTemplate.Height = 24;
-            this.dgvCustomers.Size = new System.Drawing.Size(777, 400);
+            this.dgvCustomers.Size = new System.Drawing.Size(825, 400);
             this.dgvCustomers.TabIndex = 16;
             this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             // 
@@ -234,28 +244,38 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "\"Success is a journey, not a destination.\"";
             // 
+            // pnlCustomerInfo
+            // 
+            this.pnlCustomerInfo.BackColor = System.Drawing.Color.NavajoWhite;
+            this.pnlCustomerInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCustomerInfo.Controls.Add(this.tbSearch);
+            this.pnlCustomerInfo.Controls.Add(this.label1);
+            this.pnlCustomerInfo.Controls.Add(this.label2);
+            this.pnlCustomerInfo.Controls.Add(this.label3);
+            this.pnlCustomerInfo.Controls.Add(this.label4);
+            this.pnlCustomerInfo.Controls.Add(this.tbId);
+            this.pnlCustomerInfo.Controls.Add(this.tbName);
+            this.pnlCustomerInfo.Controls.Add(this.pbSearch);
+            this.pnlCustomerInfo.Controls.Add(this.cbDeleted);
+            this.pnlCustomerInfo.Controls.Add(this.tbPhoneNumber);
+            this.pnlCustomerInfo.Controls.Add(this.label5);
+            this.pnlCustomerInfo.Location = new System.Drawing.Point(13, 32);
+            this.pnlCustomerInfo.Name = "pnlCustomerInfo";
+            this.pnlCustomerInfo.Size = new System.Drawing.Size(392, 337);
+            this.pnlCustomerInfo.TabIndex = 18;
+            // 
             // ShopCustomersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlCustomerInfo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvCustomers);
             this.Controls.Add(this.pbAdd);
             this.Controls.Add(this.pbSave);
             this.Controls.Add(this.pbRefresh);
             this.Controls.Add(this.pbDelete);
-            this.Controls.Add(this.pbSearch);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbSearch);
-            this.Controls.Add(this.tbPhoneNumber);
-            this.Controls.Add(this.cbDeleted);
-            this.Controls.Add(this.tbName);
-            this.Controls.Add(this.tbId);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "ShopCustomersControl";
             this.Size = new System.Drawing.Size(1262, 518);
             this.Load += new System.EventHandler(this.ShopCustomersControl_Load);
@@ -265,6 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.pnlCustomerInfo.ResumeLayout(false);
+            this.pnlCustomerInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +312,6 @@
         private System.Windows.Forms.PictureBox pbAdd;
         private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel pnlCustomerInfo;
     }
 }

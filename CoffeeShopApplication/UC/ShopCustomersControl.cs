@@ -84,6 +84,12 @@ namespace CoffeeShopApplication.UC
 
         private void pbRefresh_Click(object sender, EventArgs e)
         {
+            // clear all textboxes
+            tbSearch.Text = "";
+            tbId.Text = "";
+            tbName.Text = "";
+            tbPhoneNumber.Text = "";
+
             DataSet customerDataSet = CustomerBL.getAllCustomers();
             dgvCustomers.DataSource = customerDataSet.Tables[0].DefaultView;
         }
@@ -116,6 +122,7 @@ namespace CoffeeShopApplication.UC
                 tbId.Text = row.Cells[0].Value.ToString();
                 tbName.Text = row.Cells[1].Value.ToString();
                 tbPhoneNumber.Text = row.Cells[2].Value.ToString();
+                tbId.ReadOnly = true;
 
                 switch (row.Cells[4].Value)
                 {

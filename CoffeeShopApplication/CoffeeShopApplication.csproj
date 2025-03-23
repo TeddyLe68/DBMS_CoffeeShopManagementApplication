@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BL\AccountBL.cs" />
     <Compile Include="BL\CustomerBL.cs" />
+    <Compile Include="BL\IngredientBL.cs" />
+    <Compile Include="BL\ProductBL.cs" />
     <Compile Include="DB\DBConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

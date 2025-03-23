@@ -64,6 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Chocolate;
             this.label1.Location = new System.Drawing.Point(850, 9);
@@ -98,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Script", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Peru;
+            this.label2.ForeColor = System.Drawing.Color.Chocolate;
             this.label2.Location = new System.Drawing.Point(594, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 67);
@@ -108,54 +109,54 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Peru;
-            this.label3.Location = new System.Drawing.Point(527, 181);
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Chocolate;
+            this.label3.Location = new System.Drawing.Point(527, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 24);
+            this.label3.Size = new System.Drawing.Size(98, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Username";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Peru;
+            this.label4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(527, 264);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 24);
+            this.label4.Size = new System.Drawing.Size(98, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "Password";
             // 
             // tbUserName
             // 
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUserName.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserName.ForeColor = System.Drawing.Color.Black;
-            this.tbUserName.Location = new System.Drawing.Point(496, 211);
+            this.tbUserName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserName.ForeColor = System.Drawing.Color.Chocolate;
+            this.tbUserName.Location = new System.Drawing.Point(496, 217);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(350, 29);
+            this.tbUserName.Size = new System.Drawing.Size(350, 24);
             this.tbUserName.TabIndex = 6;
             // 
             // tbPassword
             // 
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPassword.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbPassword.Location = new System.Drawing.Point(496, 295);
+            this.tbPassword.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.ForeColor = System.Drawing.Color.Chocolate;
+            this.tbPassword.Location = new System.Drawing.Point(496, 298);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(350, 29);
+            this.tbPassword.Size = new System.Drawing.Size(350, 24);
             this.tbPassword.TabIndex = 7;
             // 
             // cb_Show_Password
             // 
             this.cb_Show_Password.AutoSize = true;
-            this.cb_Show_Password.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_Show_Password.ForeColor = System.Drawing.Color.Peru;
-            this.cb_Show_Password.Location = new System.Drawing.Point(496, 329);
+            this.cb_Show_Password.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Show_Password.ForeColor = System.Drawing.Color.Chocolate;
+            this.cb_Show_Password.Location = new System.Drawing.Point(496, 332);
             this.cb_Show_Password.Name = "cb_Show_Password";
-            this.cb_Show_Password.Size = new System.Drawing.Size(164, 28);
+            this.cb_Show_Password.Size = new System.Drawing.Size(175, 27);
             this.cb_Show_Password.TabIndex = 8;
             this.cb_Show_Password.Text = "Show Password";
             this.cb_Show_Password.UseVisualStyleBackColor = true;
@@ -164,11 +165,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Peru;
-            this.label5.Location = new System.Drawing.Point(798, 332);
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Chocolate;
+            this.label5.Location = new System.Drawing.Point(798, 335);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 22);
+            this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Clear";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -178,7 +180,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(496, 180);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(28, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -186,9 +188,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(496, 264);
+            this.pictureBox3.Location = new System.Drawing.Point(496, 261);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox3.Size = new System.Drawing.Size(29, 29);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
@@ -196,9 +198,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.BurlyWood;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.SeaShell;
             this.button1.Location = new System.Drawing.Point(496, 402);
             this.button1.Name = "button1";
@@ -211,11 +214,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.BurlyWood;
             this.label7.Location = new System.Drawing.Point(646, 448);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 24);
+            this.label7.Size = new System.Drawing.Size(54, 23);
             this.label7.TabIndex = 13;
             this.label7.Text = "EXIT";
             this.label7.Click += new System.EventHandler(this.label7_Click);
