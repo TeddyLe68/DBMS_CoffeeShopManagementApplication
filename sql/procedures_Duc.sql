@@ -19,36 +19,45 @@ END;
 GO
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'UpdateEmployeeProc')
-DROP PROCEDURE UpdateEmployeeProc
+    DROP PROCEDURE UpdateEmployeeProc;
 GO
+
 CREATE PROCEDURE UpdateEmployeeProc
     @EmployeeId UNIQUEIDENTIFIER,
     @FullName NVARCHAR(100),
     @PhoneNumber VARCHAR(15),
     @Address NVARCHAR(255),
     @Email VARCHAR(255),
-    @Role VARCHAR(20),
     @IsWorking BIT,
-    @UpdateType VarChar(20)
+    @UpdateType VARCHAR(20)
 AS
 BEGIN
-	IF @UpdateType = 'update'
-		BEGIN
-			UPDATE Employee
-			SET isWorking = @IsWorking,
-				updatedAt = GETDATE()
-			WHERE employeeId = @EmployeeId;
-		-- Nếu IsWorking là False, đánh dấu Account tương ứng là đã xóa
-		IF @IsWorking = 0
-		BEGIN
-			UPDATE Account
-			SET isDeleted = 1,
-				updatedAt = GETDATE()
-			WHERE employeeId = @EmployeeId;
-		END;
-	END;
+    SET NOCOUNT ON; -- Tránh lỗi khi chạy batch SQL
+
+    IF @UpdateType = 'update'
+    BEGIN
+        UPDATE Employee
+        SET FullName = @FullName,
+            PhoneNumber = @PhoneNumber,
+            Address = @Address,
+            Email = @Email,
+            isWorking = @IsWorking,
+            updatedAt = GETDATE()
+        WHERE employeeId = @EmployeeId;
+
+        -- Nếu isWorking = 0, cập nhật bảng Account
+        IF @IsWorking = 0
+        BEGIN
+            UPDATE Account
+            SET isDeleted = 1,
+                updatedAt = GETDATE()
+            WHERE employeeId = @EmployeeId;
+        END;
+    END;
 END;
 GO
+
+
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'AddAccountProc')
 DROP PROCEDURE AddAccountProc

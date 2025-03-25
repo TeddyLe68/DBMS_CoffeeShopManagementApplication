@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="BL\AccountBL.cs" />
     <Compile Include="BL\CustomerBL.cs" />
+    <Compile Include="BL\EmployeeBL.cs" />
     <Compile Include="BL\IngredientBL.cs" />
+    <Compile Include="BL\OrderBillBL.cs" />
+    <Compile Include="BL\OrderBillDetailBL.cs" />
     <Compile Include="BL\ProductBL.cs" />
     <Compile Include="DB\DBConnection.cs" />
     <Compile Include="Form1.cs">
@@ -68,6 +71,12 @@
     </Compile>
     <Compile Include="Interfaces\LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopOrderBillDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopOrderBillDetailForm.Designer.cs">
+      <DependentUpon>ShopOrderBillDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ShopOrderBillDetailForm.resx">
+      <DependentUpon>ShopOrderBillDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

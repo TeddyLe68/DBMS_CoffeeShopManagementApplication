@@ -1,4 +1,4 @@
-USE CoffeeShopManagement
+﻿USE CoffeeShopManagement
 GO
 -- 1. Function findEmployeeByName
 IF EXISTS (
@@ -14,9 +14,31 @@ CREATE FUNCTION findEmployeeByNameFunction
 RETURNS TABLE
 AS
 RETURN (
-    SELECT * FROM Employee WHERE fullName = @employeeName
+    SELECT * FROM Employee WHERE fullName LIKE '%'+  @employeeName + '%'
 );
 GO
+-- Xóa function nếu đã tồn tại
+IF EXISTS (
+    SELECT * FROM sysobjects WHERE id = object_id(N'findEmployeeByPhoneNumberFunction') 
+    AND xtype IN (N'FN', N'IF', N'TF')
+)
+    DROP FUNCTION findEmployeeByPhoneNumberFunction
+GO
+
+-- Tạo function mới để tìm nhân viên theo số điện thoại
+CREATE FUNCTION findEmployeeByPhoneNumberFunction 
+( 
+    @phoneNumber VARCHAR(15)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT employeeId, fullName, phoneNumber, address, email, isWorking, joinedAt, updatedAt,isDeleted -- Cần liệt kê cột cụ thể
+    FROM Employee 
+    WHERE phoneNumber LIKE '%' + @phoneNumber + '%'
+);
+GO
+
 
 -- 2. Function findOrderBillById
 IF EXISTS (

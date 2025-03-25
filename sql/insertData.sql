@@ -1,11 +1,19 @@
 ﻿use CoffeeShopManagement
 GO
 
-
--- Tạo tài khoản (Account) cho admin và employee
-INSERT INTO Account (employeeId, username, password, role, createdAt, updatedAt)
+INSERT INTO [CoffeeShopManagement].[dbo].[Account] 
+    ([accountId], [employeeId], [username], [password], [role], [createdAt], [updatedAt], [isDeleted])
 VALUES 
-    ('DE5F28A1-143A-44F0-B178-8D57301B3481', 'admin', 'admin123', 'manager', GETDATE(), GETDATE());
+    (NEWID(), NULL, 'adminn', 'admin1234', 'Manager', GETDATE(), GETDATE(), 0);
+
+
+DELETE FROM Account
+WHERE accountId = 'b6d3be50-b0e1-4232-a28f-c6d3670d8828';
+
+UPDATE Account
+SET role = 'Manager', updatedAt = CURRENT_TIMESTAMP
+WHERE accountId = '246189d0-8dec-4a28-94f9-e6af8dff6b45';
+
 
 
 GRANT UPDATE ON Account TO [Admin User]
@@ -28,6 +36,7 @@ INSERT INTO Employee (fullName, phoneNumber, address, email, isWorking, joinedAt
 VALUES
 	(N'Minh Đức', '0933355577', N'4 Võ Văn Ngân, TP.HCM', 'duc@gmail.com', 0, CONVERT(DATE, '12/09/2023', 103), GETDATE());
 GO
+
 INSERT INTO Customer (customerName, phoneNumber, createdAt, updatedAt)
 VALUES 
     (N'Trúc Nga', '123456789', GETDATE(), GETDATE()),

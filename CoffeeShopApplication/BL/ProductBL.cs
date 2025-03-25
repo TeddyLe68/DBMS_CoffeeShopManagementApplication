@@ -21,7 +21,7 @@ namespace CoffeeShopApplication.BL
 
         public static DataSet getListProducts()
         {
-            String str = "Select * from ListProcductView";
+            String str = "Select * from ListProductView";
             DataSet ds = DBConnection.getInstance().ExecuteQuery(str, CommandType.Text, null);
             return ds;
         }
