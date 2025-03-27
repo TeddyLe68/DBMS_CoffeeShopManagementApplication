@@ -12,12 +12,37 @@ namespace CoffeeShopApplication.BL
 {
     public class AccountBL
     {
+        
         public static DataSet getAllAccount()
         {
             String str = "Select * from Account";
             DataSet ds = DBConnection.getInstance().ExecuteQuery(str, CommandType.Text, null);
             return ds;
         }
+        //get role
+        public static string getRole(string accountId)
+        {
+            try
+            {
+                string sqlStr = string.Format($"SELECT role FROM Account WHERE accountId = '{accountId}'");
+                DataTable dtable = new DataTable();
+                string connectionString = "Server=TATTHANG;Database=CoffeeShopManagement;Integrated Security=True;";
+                SqlDataAdapter sda = new SqlDataAdapter(sqlStr, connectionString);
+                sda.Fill(dtable);
+                if (dtable.Rows.Count > 0)
+                {
+                    return dtable.Rows[0].ItemArray[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi ở đây, ví dụ:
+                Console.WriteLine("Error occurred while getting role: " + ex.Message);
+            }
+            return "";
+        }
+
+
         public static DataSet findAccountByUserName(string username)
         {
             String str = "SELECT * FROM dbo.findAccountByUserName(@userName)";
@@ -39,7 +64,7 @@ namespace CoffeeShopApplication.BL
 
                 if (dtable.Rows.Count > 0)
                 {
-                    return dtable.Rows[0].ItemArray[1].ToString();
+                    return dtable.Rows[0].ItemArray[0].ToString();
                 }
             }
             catch (Exception ex)

@@ -15,6 +15,8 @@ namespace CoffeeShopApplication.Interfaces
 {
     public partial class LogInForm: Form
     {
+
+
         public LogInForm()
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace CoffeeShopApplication.Interfaces
                 Program.loggedInEmployeeId = accountId;
                 DBConnection.Username = tbUserName.Text;
                 DBConnection.Password = tbPassword.Text;
+
+                // get role
+                string role = AccountBL.getRole(accountId);
+                Program.loggedInUserRole = role; // Store the role in a global
+
                 MainForm homeForm = new MainForm();
                 homeForm.Show();
                 tbUserName.Clear();

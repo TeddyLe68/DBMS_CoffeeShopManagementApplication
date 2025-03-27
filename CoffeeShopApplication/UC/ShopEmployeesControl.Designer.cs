@@ -145,7 +145,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe Print", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(800, 131);
+            this.label7.Location = new System.Drawing.Point(786, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(417, 35);
             this.label7.TabIndex = 25;

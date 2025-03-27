@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeControl));
             this.lbHello = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbManageAccount = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.pbAccounts = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbManageAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAccounts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,15 +49,16 @@
             this.lbHello.TabIndex = 14;
             this.lbHello.Text = "Hello !!!";
             // 
-            // pictureBox1
+            // pbManageAccount
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.pbManageAccount.Image = ((System.Drawing.Image)(resources.GetObject("pbManageAccount.Image")));
+            this.pbManageAccount.Location = new System.Drawing.Point(7, 13);
+            this.pbManageAccount.Name = "pbManageAccount";
+            this.pbManageAccount.Size = new System.Drawing.Size(50, 50);
+            this.pbManageAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbManageAccount.TabIndex = 13;
+            this.pbManageAccount.TabStop = false;
+            this.pbManageAccount.Click += new System.EventHandler(this.pbManageAccount_Click);
             // 
             // btnLogOut
             // 
@@ -100,13 +101,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbHello);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbManageAccount);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pbAccounts);
             this.Name = "HomeControl";
             this.Size = new System.Drawing.Size(1262, 518);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbManageAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAccounts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,7 +117,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbHello;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbManageAccount;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pbAccounts;

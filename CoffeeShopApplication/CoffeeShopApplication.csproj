@@ -50,9 +50,14 @@
     <Compile Include="BL\CustomerBL.cs" />
     <Compile Include="BL\EmployeeBL.cs" />
     <Compile Include="BL\IngredientBL.cs" />
+    <Compile Include="BL\InventoryBL.cs" />
+    <Compile Include="BL\InventoryCheckBL.cs" />
+    <Compile Include="BL\InventoryCheckDetailsBL.cs" />
     <Compile Include="BL\OrderBillBL.cs" />
     <Compile Include="BL\OrderBillDetailBL.cs" />
     <Compile Include="BL\ProductBL.cs" />
+    <Compile Include="BL\RestockBillBL.cs" />
+    <Compile Include="BL\RestockBillDetailsBL.cs" />
     <Compile Include="DB\DBConnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,11 +77,29 @@
     <Compile Include="Interfaces\LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ShopAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopAccountForm.Designer.cs">
+      <DependentUpon>ShopAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryCheckDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopInventoryCheckDetailsForm.Designer.cs">
+      <DependentUpon>ShopInventoryCheckDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ShopOrderBillDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\ShopOrderBillDetailForm.Designer.cs">
       <DependentUpon>ShopOrderBillDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\ShopRestockBillDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\ShopRestockBillDetailsForm.Designer.cs">
+      <DependentUpon>ShopRestockBillDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,8 +172,17 @@
     <EmbeddedResource Include="Interfaces\LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ShopAccountForm.resx">
+      <DependentUpon>ShopAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ShopInventoryCheckDetailsForm.resx">
+      <DependentUpon>ShopInventoryCheckDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\ShopOrderBillDetailForm.resx">
       <DependentUpon>ShopOrderBillDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\ShopRestockBillDetailsForm.resx">
+      <DependentUpon>ShopRestockBillDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -11,6 +11,7 @@ namespace CoffeeShopApplication
     {
         static Form mainForm = new LogInForm();
         static public String loggedInEmployeeId;
+        static public String loggedInUserRole;
 
         public static Form MainForm { get => mainForm; }
         /// <summary>

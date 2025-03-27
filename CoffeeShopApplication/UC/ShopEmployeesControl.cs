@@ -14,11 +14,24 @@ namespace CoffeeShopApplication.UC
     public partial class ShopEmployeesControl: UserControl
     {
         private Point[] componentLocations;
-        private Size pbSize;
         public ShopEmployeesControl()
-        {
+        {   
             InitializeComponent();
             componentLocations = new Point[5];
+            string userRole = Program.loggedInUserRole; // Access the role  
+            // If the user is not a manager, disable the add, save, delete buttons
+            if (userRole != "Manager")
+            {
+                pbAdd.Enabled = false;
+                pbSave.Enabled = false;
+                pbDelete.Enabled = false;
+            }else {
+                pbAdd.Enabled = true;
+                pbSave.Enabled = true;
+                pbDelete.Enabled = true;
+            }
+
+            
         }
 
         private void ShopEmployeesControl_Load(object sender, EventArgs e)
@@ -66,24 +79,35 @@ namespace CoffeeShopApplication.UC
 
         private void pbSave_Click(object sender, EventArgs e)
         {
-            string id = tbId.Text.Trim();
-            string fullName = tbName.Text.Trim();
-            string phoneNumber = tbPhoneNumber.Text.Trim();
-            string address = tbAddress.Text.Trim();
-            string email = tbEmail.Text.Trim();
-            string isWorking = cbWorking.Text.Trim();
-            string isDeleted = cbDeleted.Text.Trim();
-
-            string updateType = (isDeleted.Equals("yes", StringComparison.OrdinalIgnoreCase)) ? "delete" : "update";
-
-            if (EmployeeBL.updateEmployee(id, fullName, phoneNumber, address, email, isWorking, updateType))
+            String id, fullName, phoneNumber, address, email, isDeleted, isWorking;
+            id = tbId.Text;
+            fullName = tbName.Text;
+            phoneNumber = tbPhoneNumber.Text;
+            address = tbAddress.Text;
+            email = tbEmail.Text;
+            isWorking = cbWorking.Text;
+            isDeleted = cbDeleted.Text;
+            if (isDeleted != "yes")
             {
-                MessageBox.Show("Updated successfully!", "Action result");
-                dgvEmployee.DataSource = EmployeeBL.getAllEmployee().Tables[0].DefaultView;
+                if (EmployeeBL.updateEmployee(id, fullName, phoneNumber, address, email, isWorking, "update"))
+                {
+                    MessageBox.Show("Updated a row successfully!", "Action result");
+                    DataSet employeetDataSet = EmployeeBL.getAllEmployee();
+                    dgvEmployee.DataSource = employeetDataSet.Tables[0].DefaultView;
+                }
+                else
+                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
             }
             else
             {
-                MessageBox.Show("Failed to update! Check your input data!", "Action result");
+                if (EmployeeBL.updateEmployee(id, fullName, phoneNumber, address, email, isWorking, "delete"))
+                {
+                    MessageBox.Show("Updated a row successfully!", "Action result");
+                    DataSet employeetDataSet = EmployeeBL.getAllEmployee();
+                    dgvEmployee.DataSource = employeetDataSet.Tables[0].DefaultView;
+                }
+                else
+                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
             }
         }
 
