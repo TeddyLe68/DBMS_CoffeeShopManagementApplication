@@ -55,6 +55,13 @@ namespace CoffeeShopApplication.UC
             }
             else
                 MessageBox.Show("Failed to add a row! Check your input data!", "Action result");
+
+            // clear all textboxes
+            tbSearch.Text = "";
+            tbId.Text = "";
+            tbName.Text = "";
+            tbManufacturerName.Text = "";
+
         }
 
         private void pbSave_Click(object sender, EventArgs e)

@@ -29,23 +29,29 @@ CREATE PROCEDURE UpdateEmployeeProc
     @Address NVARCHAR(255),
     @Email VARCHAR(255),
     @IsWorking BIT,
+    @IsDeleted BIT,
     @UpdateType VARCHAR(20)
 AS
 BEGIN
-    SET NOCOUNT ON; -- Tránh lỗi khi chạy batch SQL
+    SET NOCOUNT ON;
 
     IF @UpdateType = 'update'
     BEGIN
+        -- Ràng buộc logic: nếu isDeleted = 1 thì isWorking = 0
+        IF @IsDeleted = 1 SET @IsWorking = 0;
+
+        -- Cập nhật bảng Employee
         UPDATE Employee
-        SET FullName = @FullName,
+        SET FullName   = @FullName,
             PhoneNumber = @PhoneNumber,
-            Address = @Address,
-            Email = @Email,
-            isWorking = @IsWorking,
-            updatedAt = GETDATE()
+            Address     = @Address,
+            Email       = @Email,
+            isWorking   = @IsWorking,
+            isDeleted   = @IsDeleted,
+            updatedAt   = GETDATE()
         WHERE employeeId = @EmployeeId;
 
-        -- Nếu isWorking = 0, cập nhật bảng Account
+        -- Nếu không còn làm việc, cập nhật Account
         IF @IsWorking = 0
         BEGIN
             UPDATE Account

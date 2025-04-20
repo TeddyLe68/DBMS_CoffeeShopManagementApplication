@@ -14,6 +14,12 @@ UPDATE Account
 SET role = 'Manager', updatedAt = CURRENT_TIMESTAMP
 WHERE accountId = '246189d0-8dec-4a28-94f9-e6af8dff6b45';
 
+use CoffeeShopManagement
+GO
+DELETE FROM Ingredient
+WHERE ingredientId ='6b28ebe3-b950-4ead-84d7-d72c0274b89a';
+GO
+
 
 
 GRANT UPDATE ON Account TO [Admin User]

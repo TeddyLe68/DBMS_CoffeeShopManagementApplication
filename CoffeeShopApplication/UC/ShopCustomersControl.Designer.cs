@@ -48,6 +48,11 @@
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlCustomerInfo = new System.Windows.Forms.Panel();
+            this.customerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedAtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDeletedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh)).BeginInit();
@@ -225,6 +230,12 @@
             // 
             this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIdDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.updatedAtDataGridViewTextBoxColumn,
+            this.isDeletedDataGridViewCheckBoxColumn});
             this.dgvCustomers.Location = new System.Drawing.Point(420, 32);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.RowHeadersWidth = 51;
@@ -263,6 +274,46 @@
             this.pnlCustomerInfo.Name = "pnlCustomerInfo";
             this.pnlCustomerInfo.Size = new System.Drawing.Size(392, 337);
             this.pnlCustomerInfo.TabIndex = 18;
+            // 
+            // customerIdDataGridViewTextBoxColumn
+            // 
+            customerIdDataGridViewTextBoxColumn.DataPropertyName = "customerId";
+            customerIdDataGridViewTextBoxColumn.HeaderText = "customerId";
+            customerIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            customerIdDataGridViewTextBoxColumn.Name = "customerIdDataGridViewTextBoxColumn";
+            customerIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            customerNameDataGridViewTextBoxColumn.DataPropertyName = "customerName";
+            customerNameDataGridViewTextBoxColumn.HeaderText = "customerName";
+            customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "phoneNumber";
+            phoneNumberDataGridViewTextBoxColumn.HeaderText = "phoneNumber";
+            phoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // updatedAtDataGridViewTextBoxColumn
+            // 
+            updatedAtDataGridViewTextBoxColumn.DataPropertyName = "updatedAt";
+            updatedAtDataGridViewTextBoxColumn.HeaderText = "updatedAt";
+            updatedAtDataGridViewTextBoxColumn.MinimumWidth = 6;
+            updatedAtDataGridViewTextBoxColumn.Name = "updatedAtDataGridViewTextBoxColumn";
+            updatedAtDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDeletedDataGridViewCheckBoxColumn
+            // 
+            isDeletedDataGridViewCheckBoxColumn.DataPropertyName = "isDeleted";
+            isDeletedDataGridViewCheckBoxColumn.HeaderText = "isDeleted";
+            isDeletedDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            isDeletedDataGridViewCheckBoxColumn.Name = "isDeletedDataGridViewCheckBoxColumn";
+            isDeletedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // ShopCustomersControl
             // 
@@ -313,5 +364,10 @@
         private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel pnlCustomerInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedAtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isDeletedDataGridViewCheckBoxColumn;
     }
 }

@@ -70,7 +70,7 @@ namespace CoffeeShopApplication.BL
         }
 
 
-        public static bool updateEmployee(string id, string fullName, string phoneNumber, string address, string email, string isWorking, string updateType)
+        public static bool updateEmployee(string id, string fullName, string phoneNumber, string address, string email, string isWorking, string updateType, bool isDeleted)
         {
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(fullName) ||
                 string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(address) ||
@@ -97,8 +97,9 @@ namespace CoffeeShopApplication.BL
                 SqlParameter EmailParam = new SqlParameter("@Email", email);
                 SqlParameter IsWorkingParam = new SqlParameter("@IsWorking", isWorkingBool);
                 SqlParameter UpdateTypeParam = new SqlParameter("@UpdateType", updateType);
+                SqlParameter IsDeletedParam = new SqlParameter("@IsDeleted", isDeleted);
 
-                SqlParameter[] parameters = { EmployeeIdParam, FullNameParam, PhoneNumParam, AddressParam, EmailParam, IsWorkingParam, UpdateTypeParam };
+                SqlParameter[] parameters = { EmployeeIdParam, FullNameParam, PhoneNumParam, AddressParam, EmailParam, IsWorkingParam, UpdateTypeParam, IsDeletedParam };
 
                 bool commandResult = DBConnection.getInstance().ExecuteNonQuery(str, CommandType.StoredProcedure, parameters);
                 return commandResult;

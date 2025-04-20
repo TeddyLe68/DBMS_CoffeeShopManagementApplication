@@ -22,34 +22,30 @@ namespace CoffeeShopApplication.Interfaces
 
         private void pbSave_Click(object sender, EventArgs e)
         {
-            String accountId, userName, employeeId, role, password, isDeleted;
-            accountId = tbAccountId.Text;
-            userName = tbUserName.Text;
-            employeeId = tbEmployeeId.Text;
-            password = tbPassword.Text;
-            role = cbRole.Text;
-            isDeleted = cbDeleted.Text;
-            if (isDeleted == "yes")
+            // Retrieve input values
+            string accountId = tbAccountId.Text;
+            string userName = tbUserName.Text;
+            string employeeId = tbEmployeeId.Text;
+            string password = tbPassword.Text;
+            string role = cbRole.Text;
+            string isDeleted = cbDeleted.Text;
+
+            // Determine the isDeleted flag
+            string isDeletedFlag = isDeleted.Equals("yes", StringComparison.OrdinalIgnoreCase) ? "1" : "0";
+
+            // Attempt to update the account
+            bool isUpdated = AccountBL.updateAccount(employeeId, accountId, password, userName, role, isDeletedFlag);
+
+            // Handle the result
+            if (isUpdated)
             {
-                if (AccountBL.updateAccount(employeeId, accountId, password, userName, role, "1"))
-                {
-                    MessageBox.Show("Updated a row successfully!", "Action result");
-                    DataSet accountDataSet = AccountBL.getAllAccount();
-                    dgvAccount.DataSource = accountDataSet.Tables[0].DefaultView;
-                }
-                else
-                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
+                MessageBox.Show("Updated a row successfully!", "Action result");
+                DataSet accountDataSet = AccountBL.getAllAccount();
+                dgvAccount.DataSource = accountDataSet.Tables[0].DefaultView;
             }
             else
             {
-                if (AccountBL.updateAccount(employeeId, accountId, password, userName, role, "0"))
-                {
-                    MessageBox.Show("Updated a row successfully!", "Action result");
-                    DataSet accountDataSet = AccountBL.getAllAccount();
-                    dgvAccount.DataSource = accountDataSet.Tables[0].DefaultView;
-                }
-                else
-                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
+                MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
             }
         }
 

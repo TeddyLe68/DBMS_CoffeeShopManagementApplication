@@ -79,37 +79,50 @@ namespace CoffeeShopApplication.UC
 
         private void pbSave_Click(object sender, EventArgs e)
         {
-            String id, fullName, phoneNumber, address, email, isDeleted, isWorking;
-            id = tbId.Text;
-            fullName = tbName.Text;
-            phoneNumber = tbPhoneNumber.Text;
-            address = tbAddress.Text;
-            email = tbEmail.Text;
-            isWorking = cbWorking.Text;
-            isDeleted = cbDeleted.Text;
-            if (isDeleted != "yes")
+            // Lấy dữ liệu từ form
+            string id = tbId.Text.Trim();
+            string fullName = tbName.Text.Trim();
+            string phoneNumber = tbPhoneNumber.Text.Trim();
+            string address = tbAddress.Text.Trim();
+            string email = tbEmail.Text.Trim();
+            string isWorking = cbWorking.Text.Trim();
+            string isDeleted = cbDeleted.Text.Trim();
+
+            // Kiểm tra đầu vào rỗng
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(fullName) ||
+                string.IsNullOrWhiteSpace(phoneNumber) || string.IsNullOrWhiteSpace(address) ||
+                string.IsNullOrWhiteSpace(email))
             {
-                if (EmployeeBL.updateEmployee(id, fullName, phoneNumber, address, email, isWorking, "update"))
-                {
-                    MessageBox.Show("Updated a row successfully!", "Action result");
-                    DataSet employeetDataSet = EmployeeBL.getAllEmployee();
-                    dgvEmployee.DataSource = employeetDataSet.Tables[0].DefaultView;
-                }
-                else
-                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thiếu dữ liệu");
+                return;
+            }
+
+            // Chuyển đổi giá trị chuỗi "Yes"/"No" thành bool
+            bool isDeletedBool = isDeleted.Equals("Yes", StringComparison.OrdinalIgnoreCase);
+
+            // Nếu bị xóa, thì tự động không còn làm việc
+            if (isDeletedBool)
+            {
+                isWorking = "No";
+            }
+
+            // Gọi hàm cập nhật
+            bool result = EmployeeBL.updateEmployee(
+                id, fullName, phoneNumber, address, email, isWorking, "update", isDeletedBool);
+
+            if (result)
+            {
+                MessageBox.Show("Updated a row successfully!", "Action result");
+                DataSet employeeDataSet = EmployeeBL.getAllEmployee();
+                dgvEmployee.DataSource = employeeDataSet.Tables[0].DefaultView;
             }
             else
             {
-                if (EmployeeBL.updateEmployee(id, fullName, phoneNumber, address, email, isWorking, "delete"))
-                {
-                    MessageBox.Show("Updated a row successfully!", "Action result");
-                    DataSet employeetDataSet = EmployeeBL.getAllEmployee();
-                    dgvEmployee.DataSource = employeetDataSet.Tables[0].DefaultView;
-                }
-                else
-                    MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
+                MessageBox.Show("Failed to update a row! Check your input data!", "Action result");
             }
         }
+
+
 
 
         private void pbRefresh_Click(object sender, EventArgs e)
